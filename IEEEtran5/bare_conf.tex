@@ -505,26 +505,30 @@ Hence, these the sender are stored in the domain name system blacklist (DNSBL) \
 %
 In the modern email system may be using the process to index reliability of the sender email system (Sender Reputation) of their own \cite{DBLP:taylor}. 
 %
-The recipients can choose to receive email
-from the high reputation score senders.
-Sender reputation method is used instead of DNSWL and DNSBL to simple manage the system.
-However, this method is suitable to be applied to the large email systems with the large volume of the receiving and sending emails.
-Because, reputation score senders are calculated from feedback from clients.
-%However, this method has been used for the large email systems with the volume of the receiving and sending emails. 
-%The reliability index is created by reports from users.
+The recipients can choose to receive the emails from the high reputation score senders.
+%
+Sender reputation method is used instead of DNSWL and DNSBL to simply manage the system.
+%
+However, this method is suitable to be applied to the large email systems with the large volume of the receiving and sending emails because reputation score senders are calculated from clients feedback .
 
-Besides the sender database and sender reputation method, there are methods of the receiving email analysis from the sender. 
-For example, Sender Policy Framework (SPF) is used to identify and authenticate the senders by specifying IP address and domain name into the domain name system (DNS) \cite{wong}, \cite{NguyenTuanAnh}, \cite{Seike}.
-Domain Key Identified Mail (DKIM) is a method to identify and authenticate the senders and to verify the accuracy of the letterhead and message body by Asymmetric Key \cite{crocker}, \cite{Leiba}, \cite{Higashikado}.
-Upasana and Chakravarty \cite{upasana} and Li et al. \cite{XiaoJunyong} use the content filtering method to verify the email content for the final inspection. 
-This is one method used to check the words or form sentences by using machine learning process to classify the type of received email. 
+
+Besides the sender database and sender reputation method, there are several methods of the receiving email analysis from the sender. 
+%
+For example, Sender Policy Framework (SPF) is used to identify and authenticate the senders by specifying IP address and domain name into the domain name system (DNS) \cite{wong,NguyenTuanAnh,Seike}.
+%
+Domain Key Identified Mail (DKIM) is a method to identify and authenticate the senders and to verify the accuracy of the letterhead and message body by Asymmetric Key \cite{crocker,Leiba,Higashikado}.
+%
+Upasana, Chakravarty \cite{upasana} and Li et al. \cite{XiaoJunyong} use the content filtering method to verify the email content for the final inspection.
+% 
+This is one method used to check the words or formed sentences by using machine learning process to classify the type of received email. 
+%
 The recipients can configure content filtering by personal setting or specific forms from the central databases.
-%Content filtering method can be configured for both personal and specific forms from the central databases.
-%In addition, it offers both using the personal settings and specific forms from the central databases available in many places. 
-However, It uses processing resources in relatively high and occurs errors frequently such as:
-the system unable to classify the type of received email if the characters of the content do not totally match
-with the configured words. 
-Furthermore, some email systems use the feed back loop method to send the feedback reports back to the senders to solve the problems previously mentioned \cite{falk}, \cite{FalkKucherawy}. 
+%
+However, it uses processing resources in relatively high and occurs errors frequently such as:
+%
+the system unable to classify the type of received email if the characters of the content do not totally match with the configured words.
+% 
+Furthermore, some email systems use the feed back loop method to send the feedback reports back to the senders to solve the problems previously mentioned \cite{falk,}, \cite{}. 
 %On some systems, the problems in the detection of the foregoing  may be used to report a return to sender by the feed back loop method to resolve the issue before the recipients refusing to receive mail from all senders \cite{falk}.
 
 %Such these methods use to manage the email as either spam or not spam which are not suitable for use to deal with the marketing or newsletter email.
