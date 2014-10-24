@@ -440,66 +440,71 @@ Email , Reputation System , Spam Detection , Marketing Email , Newsletter Email
 
 At present, the number of Internet users have been increasing dramatically which enables the emails to be an efficient customer communication method in our daily life.
 %
-In addition, the email gain lower cost and faster than the other communication methods. 
+In addition, the email gain the advantage in lower cost and faster than the other communication methods. 
 %
 The recipients and senders can also send and access the information anywhere and anytime via the Internet.
 %
-Because of its popularity, almost all businesses use email method to send their information to customers for various objectives as follows: advertising, purchase orders, sales, and customer care service.
+Because of its popularity, almost all businesses use the email method to send their information to customers for various objectives, such as advertising, purchase orders, sales, and customer care service.
 %
 However, the problem of unsolicited email, commonly known as email spam, is an important issue to face.
 
 An email spam is an email sent indiscriminately, indirectly or directly, to the unwanted recipients by the senders having no current relationship with the recipients.
-As a consequence, most recipients are flooded with email, some of it welcome and some not. 
-Such event lead to affecting recipient's working efficiency.
-% and harmful to the recipients by the attackers.
+%
+As a consequence, most recipients are flooded with both welcome and unwelcome emails.
+%
+Such event affects recipient to work efficiently.
+% 
 Furthermore, the recipients may be harmed by the attackers.
-As with an email spam, the use of the advertising emails, marketing or newsletter emails, violates the rights of the recipients that causes very important problems as follows. 
-%The use of the advertising emails, marketing or newsletter emails, violates the rights of the recipients as follows. 
-(1) If the advertising emails are sent randomly to unwanted recipients that might be from not up-to-date recipient list, it lead to boredom and annoyance to the recipients.
-(2) If the recipients receive unwanted email frequently, the recipients might permanently deny to
-accept these emails or even worse sender's business or products image will be damaged.
-(3) It consumes disk storage space, computational resources and network bandwidth of the recipient email systems.
-%At present, the use of email to send and receive data is widely used in both personal and commercial because the email gain lower cost and faster than the other sending or receiving methods.
-%In addition, the recipients and senders can send and access the information anywhere and anytime via the Internet. 
-%Therefore, the email is commonly used for various businesses to communicate with customers as follows: advertising, purchase orders, sales, and customer care service. 
-%Such several patterns of using the email can perform well.
-%Moreover, The recipients receiving unwanted email are frequently disturbed by the existing business or the other business that can cause the extreme negative effect on the product or business of the senders. 
-%The business senders are limited to send the email by the email systems of the recipients because the senders consume resources of the recipient email systems and annoy the recipients.
-%In addition, the senders may be blocked to communicate or send the information to customers via email that resulted in the loss of business opportunities.
+%
+As with an email spam, the use of the advertising emails, marketing or newsletter emails, violates the rights of the recipients that causes the critical problems as follows. 
+%
+\begin{enumerate}
+  \item If the advertising emails are sent randomly to unwanted recipients that might be from not up-to-date recipient lists, it lead to boredom and annoyance to the recipients.
+  \item If the recipients receive unwanted email frequently, the recipients might permanently deny to accept these emails or even worse sender's business or products image will be damaged.
+  \item It consumes disk storage space, computational resources and network bandwidth of the recipient email systems.
+\end{enumerate}
 
-Although the rule sending of the marketing or newsletter emails will be indicated in the CAN-SPAM that is sent only the intended recipients.
-The recipients can unsubscribe or use the email filtering system to identify the filter. 
-However, this rule still can not satisfy the needs of the recipients as well as it should.
-To solve these problems may be too late. 
-the recipient and the recipient email system have the negative attitude already. This result is quite serious in business.
+Although the rule of sending the marketing or newsletter emails will be indicated in the CAN-SPAM that it has to be sent to only the intended recipients.
+%
+The recipients can subscribe or use the email filtering system to identify the spam emails. 
+%
+However, this rule is unsatisfied the needs of the recipients as well as it should.
+%
+Additionally, it may be too late to solve these problems which the recipients already have the negative attitude. 
+%
+This result is quite serious in business.
 %
 In this paper, we propose the system reliability of the marketing or newsletter email called as Framework of Marketing or Newsletter Sender Reputation System (FMNSRS).  
-The FMNSRS uses sender reputation algorithm based on the centralized user feedback database to solve the problems previously mentioned.
-First, The FMNSRS creates the centralized lists of both the marketing and newsletter senders and the recipient that these lists are periodically updated.
-Then the sender reputation system calculate the score of senders by feedback from clients to classify both wanted senders and unwanted senders. 
+%
+A FMNSRS uses sender reputation algorithm based on the centralized user feedback database to solve the problems previously mentioned.
+%
+First, the FMNSRS creates the centralized lists of both the marketing and newsletter senders and the recipient in which these lists are periodically updated.
+%
+Then the sender reputation system can calculate the score of senders by feedback from clients to classify both wanted and unwanted senders. 
+%
 The wanted senders have a higher reputation score that the recipients can choose to receive the advertising email from this the high reputation score senders.
-%Such system is the Framework of Marketing or Newsletter Sender Reputation System (FMNSRS) to provide the marketing and newsletter email delivery process as most effectively that not annoy to the recipients received the unwanted email without the negative effect.
-%Moreover, the FMNSRS can compute correctly the reputation score in both the recipients and senders
 
-In the next section, we discuss background information and previous studies of filtering spam email solutions. 
+In the next section, we discuss the background information and previous studies of filtering spam email solutions. 
+%
 Section III explains our research design and process diagram. 
+%
 Experimental results are shown in Section IV.
+%
 Section V concludes and presents future directions.
 %
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Literature Review}
-%Currently, the various methods \cite{levine},  have been frequently used to manage the email, desirable and undesirable, such as the sender database is created in the form below.
-Currently, the various methods \cite{levine, Sochor, Lazzari, DBLP:taylor, wong, NguyenTuanAnh, Seike, crocker, Leiba, Higashikado, upasana, XiaoJunyong, falk, FalkKucherawy, gmail} have been frequently used to manage the email, desirable and undesirable, which will be described as follows
-%\cite{levine}, \cite{Sochor}, \cite{Lazzari}, \cite{DBLP:taylor}, \cite{wong}, \cite{NguyenTuanAnh}, \cite{Seike}, \cite{crocker}, \cite{Leiba}, \cite{Higashikado}, \cite{upasana}, \cite{falk}, \cite{FalkKucherawy}, \cite{gmail}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Currently, the various methods \cite{levine, Sochor, Lazzari, DBLP:taylor, wong, NguyenTuanAnh, Seike, crocker, Leiba, Higashikado, upasana, XiaoJunyong, falk, FalkKucherawy, gmail} have been frequently used to manage the emails, desirable and undesirable emails, which will be described as follows.
 
 The domain name system white list (DNSWL) \cite{levine} has been used to confirm that the customers always receive an email from the senders in white list.
-Besides that, the customers can refuse to receive email from the senders whose the domain name of the email system has negative history or not reliability. 
-%is not reliable or history negatively. 
-Hence, these the sender are stored in the domain name system blacklist (DNSBL) \cite{levine}, \cite{Sochor}, \cite{Lazzari}.
-%The domain name system white list (DNSWL) \cite{levine} has been used to confirm that the customers always receive an email from this sender and the customers can refuse to receive email from the sender whose the domain name of the email system is not reliable or history negatively. 
-%These the sender are stored in the domain name system blacklist (DNSBL) \cite{levine}. 
+%
+Besides that, the customers can refuse to receive email from the senders whose the domain name of the email system has negative history or not reliable. 
+%
+Hence, these the sender are stored in the domain name system blacklist (DNSBL) \cite{levine,Sochor,Lazzari}.
+%
 In the modern email system may be using the process to index reliability of the sender email system (Sender Reputation) of their own \cite{DBLP:taylor}. 
-%The sender reputation system has been used to help receiving the email with the high reliability. 
+%
 The recipients can choose to receive email
 from the high reputation score senders.
 Sender reputation method is used instead of DNSWL and DNSBL to simple manage the system.
