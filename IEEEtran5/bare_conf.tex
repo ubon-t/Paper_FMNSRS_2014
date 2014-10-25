@@ -524,45 +524,47 @@ This is one method used to check the words or formed sentences by using machine 
 %
 The recipients can configure content filtering by personal setting or specific forms from the central databases.
 %
-However, it uses processing resources in relatively high and occurs errors frequently such as:
-%
-the system unable to classify the type of received email if the characters of the content do not totally match with the configured words.
+However, it uses processing resources in relatively high and occurs errors frequently that the system unable to classify the type of received email if the characters of the content do not totally match with the configured words.
 % 
-Furthermore, some email systems use the feed back loop method to send the feedback reports back to the senders to solve the problems previously mentioned \cite{falk,}, \cite{}. 
-%On some systems, the problems in the detection of the foregoing  may be used to report a return to sender by the feed back loop method to resolve the issue before the recipients refusing to receive mail from all senders \cite{falk}.
+Furthermore, some email systems use the feed back loop method to send the feedback reports back to the senders to solve the problems previously mentioned \cite{falk,FalkKucherawy}. 
 
-%Such these methods use to manage the email as either spam or not spam which are not suitable for use to deal with the marketing or newsletter email.
 Such methods are used to manage the spam email.
-But, they are not suitable to deal with the marketing or newsletter email. 
-Because, they can not classify the group of marketing or newsletter email received. They can classify email only spam and not spam.
-However, some email systems have recently managed the marketing or newsletter email group as follows: Gmail has separate inbox of the email into groups such as Primary, Social, Promotions, Updates and etc \cite{gmail}.
-The problems of Gmail, the system unable to classify the marketing or newsletter email group if an email with the contents in the local language is not in English.
-In addition to that, the business that use a single domain name to send their information to customers for various objectives and the small local business use domain name not widely known.
-These problems lead to affecting Gmail's classification efficiency.
-%However, there are problems that system cannot detect the email with localized content (ไม่เข้าใจ). 
-%Moreover,  the small local business may be using same email address or email address not the prevalent to communicate with the customers that are caused the Gmail system cannot detect the marketing or newsletter email \cite{gmail}. (ไม่เข้าใจความหมาย) 
-%ตบท้ายด้วยการแนะนำไปสู่ Framework ของเรา ในหัวข้อถัดไป
+%
+But, they are not suitable to deal with the marketing or newsletter emails. 
+%
+Since they can not classify the group of received marketing or newsletter email, they can classify the email whether spam and not spam.
+%
+However, some email systems have recently managed the marketing or newsletter email group as follows: Gmail has separate inbox of the email into groups such as Primary, Social, Promotions, Updates, etc \cite{gmail}.
+%
+The vital problems of Gmail is that the system unable to classify the marketing or newsletter email group if an email with the contents in the local language is not in English.
+%
+In addition to that, the business that use a single domain name to send their information to customers for various objectives and the small local business use domain name are not widely known.
+%
+These problems affect Gmail's classification efficiency.
+%
 To solve the problems previously mentioned, we uses sender reputation algorithm based on the centralized user feedback database to classify the marketing or newsletter email group.
+%
 We will explain our research design and process diagram of FMNSRS in the following section.
 
-%However, some email systems have interested to find the methods to manage with the marketing or newsletter email group as follows: the email system of Google has a separate inbox of the email for Gmail category example, Social inbox and Promotions inbox and Updates inbox.
-%It has the problem that can not detect the email with localized content.  
-%Moreover, the small local business may be using same email address or email address not the prevalent to comunication with the customers that are cause the Gmail system can not detect the maketing or newsletter email \cite{gmail}.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Research design and process diagram}
-Although there are currently the various methods used to manage the wanted email and the unwanted email, it does not have a system or process that is developed to deal with the marketing or newsletter email to make effective and to meet the demand.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Although there are currently many various methods used to manage the wanted email and the unwanted email, it does not provide a system or process that is developed to deal with the marketing or newsletter email to make effective and to meet the demand.
 %
-We propose FMNSRS that the system reliability of the marketing or newsletter email.
-The FMNSRS acts as an intermediary to update the data sets, such as: 
-%the data of the marketing or newsletter email according to the wanted type of each the recipient,
-the marketing or newsletter email requirements each of the recipient, 
-the lists of sender and recipient systems which consist of email address, domain name, and ip address, 
-%the names and details of the service type of the email system serving the marketing or newsletter, 
-the sender reputation scores of Marketing or Newsletter senders, 
+We propose FMNSRS that the system can provide reliability of the marketing or newsletter email.
+%
+The FMNSRS acts as an intermediary to update the data sets, such as: the marketing or newsletter email requirements each of the recipient, 
+the lists of sender and recipient systems which consist of email address, domain name, IP address, and the sender reputation scores of Marketing or Newsletter senders 
 to distribute these data to the email systems of the recipients and the senders.
-In addition, The FMNSRS uses to improve the delivery of the marketing or newsletter emails. 
-It also does not make annoying to the recipients received the unwanted email.
+%
+In addition, The FMNSRS can be used to improve the delivery of the marketing or newsletter emails. 
+%
+It also does not annoy the recipients who received the unwanted email.
+%
 Fig. \ref{fig:FMNRS} shows the research design and the evolution processes of FMNSRS. 
+%
 This diagram is described in the following sub-sections.
 
 \begin{figure}
@@ -572,23 +574,27 @@ This diagram is described in the following sub-sections.
 \label{fig:FMNRS}
 \end{figure}
 
-%\subsection{Method 1: The request from the recipient}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The Request Method 1}
-This method is used to help the recipients sending their marketing or newsletter email requests to the destination email server.
-The request includes the email address of recipients and the marketing or newsletter email group wanted.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+This method is used to help the recipients sending their marketing or newsletter email requests to the destination email servers.
+%
+The requests include the email address of recipients and the marketing or wanted newsletter email group.
+%
 The request method 1 is
 shown in Fig. \ref{fig:Method1} and described as follows:
-%The request processes is as follows: 
-1) The recipients submit their marketing or newsletter email groups wanted to the destination email server. 
-% requests registered to The Destination Email Server what they want to receive the marketing or newsletter emails.
-2) When the destination email server receives these requests from the recipients, it forward these requests to the Marketing or Newsletter Sender Reputation System (MNSRS) to register the wanted email with MNSRS. 
-%2) If the Destination Email Server receives the registration of the recipients already, and then this request has been forwarded to the Marketing or Newsletter Sender Reputation System (MNSRS). The request includes the email address of recipients and type of content wanted.  
-%The use of MNSRS to distribute these request to the Marketing or Newsletter Email Server that is a member already in the next step.
-3) If the MNSRS receives such requests, it stores all requests of the recipients in the database itself and distributes each of the requests to the Marketing or Newsletter Email Servers by considering the matching of these requests.
+%
+\begin{enumerate}
+  \item The recipients submit their marketing or wanted newsletter email groups to the destination email server. 
+  \item When the destination email server receives these requests from the recipients, it forward these requests to the Marketing or Newsletter Sender Reputation System (MNSRS) to register the wanted email with MNSRS. 
+  \item If the MNSRS receives such requests, it stores all requests of the recipients in the its database and distributes each of the requests to the Marketing or Newsletter Email Servers by considering the matching of these requests.
+\end{enumerate}
+
 For instance, the recipients want to receive movie email group that this request is sent to the Marketing or Newsletter Email Servers that provide information on the movie.
-The marketing or newsletter email servers store the received requests in the database itself.
-In this method, the marketing or newsletter email servers can send their information to the recipients efficiency that we explain in the sending marketing or newsletter email method.
-%3) If the Marketing or Newsletter Email Servers receive the request of recipients, and then they store these request in their server to send their own emails to the recipients.
+%
+The marketing or newsletter email servers store the received requests in the its database.
+%
+In this method, the marketing or newsletter email servers can efficiently send their information to the recipients that we explain in the sending marketing or newsletter email method.
 
 \begin{figure}
 \centering
@@ -597,17 +603,19 @@ In this method, the marketing or newsletter email servers can send their informa
 \label{fig:Method1}
 \end{figure}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The Request Method 2}
-The recipients can request to receive the marketing or newsletter emails by subscription on the marketing or newsletter email servers.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The recipients can request to receive the marketing or newsletter emails by  the marketing or newsletter email servers subscription.
+%
 The request method 2 is
 shown in Fig. \ref{fig:Method2Process} and described as follows:
-%The request method 2 is shown in Fig. \ref{fig:Method2Process}.
-%The request process is as follows: 
-%1) The recipients registered to the Destination Email Server what they want to receive the marketing or newsletter emails. 
-1) The recipients can request to receive the emails by double opt-in \cite{Allman:DoubleOptIn} to subscribe of the marketing or newsletter email servers wanted.
-%2) If the Destination Email Server receives the registration of the recipients already, and then this request has been forwarded to the Marketing or Newsletter Email Servers.
-2) When the marketing or newsletter email servers receive the request and confirmation from the recipient, they send such request to MNSRS to update the list of recipients and the marketing or newsletter email group in a centralized database. 
-3) Then MNSRS forward this request to the destination email server of recipients registered to update such data in a database of recipients. 
+\begin{enumerate}
+  \item The recipients can request to receive the emails by double opt-in \cite{Allman:DoubleOptIn} to subscribe of the marketing or wanted newsletter email servers.
+  \item When the marketing or newsletter email servers receive the request and confirmation from the recipient, they send such request to MNSRS to update the list of recipients and the marketing or newsletter email group in a centralized database. 
+  \item Then MNSRS forward this request to the destination email server of recipients registered to update such data in a database of recipients. 
+\end{enumerate}
 
 \begin{figure}
 \centering
@@ -620,27 +628,26 @@ shown in Fig. \ref{fig:Method2Process} and described as follows:
 \label{subsec:3}
 The sending marketing or newsletter email method is
 shown in Fig. \ref{fig:SendingMethod} and described as follows:
-%The sending process is as follows: 
-%1) The marketing or newsletter email servers connect to MNSRS to update the list and marketing or newsletter email group wanted of recipients.
-1) The marketing or newsletter email server sends the marketing or newsletter emails to wanted recipient systems by considering the list and marketing or newsletter email group wanted of recipients in a database of sender.  
-To update such datas in a database, there are two processes as follows: the marketing or newsletter email server can define a schedule to update automatically with MNSRS.
-In addition, MNSRS can also define a schedule to send these datas to the marketing or newsletter email server for automatic updating. 
-%1) The marketing or newsletter email servers connect to MNSRS to update the detail of recipients to match the MNSRS database.
-%2) When the update is completed, the marketing or newsletter email servers send the marketing or newsletter emails to wanted recipients through the Destination Email Server of recipients.
-2) When the destination email servers receive the marketing or newsletter emails, they classify and enter these emails into the inbox categories of wanted recipients in their domain such as Marketing, Newsletter and etc. 
-If emails received are not to be desired, they are entered into the spam inbox.
+
+\begin{enumerate}
+\item The marketing or newsletter email server sends the marketing or newsletter emails to wanted recipient systems by considering the list and marketing or wanted newsletter email group of recipients in a sender database.  
+%
+To update such data in a database, there are two processes as follows: the marketing or newsletter email server can define a schedule to update automatically with MNSRS.
+  %
+In addition, MNSRS can also define a schedule to send these data to the marketing or newsletter email server for automatic updating. 
+\item When the destination email servers receive the marketing or newsletter emails, they classify and enter these emails into the inbox categories of wanted recipients in their domain such as Marketing, Newsletter and etc. 
+%
+If the received emails are undesired, they are entered into the spam inbox.
+\end{enumerate}
 %
 In the classifying email group process, the destination email servers check
-the list of senders, sender reputations, and wanted email groups each of the recipients in a database itself.
+the list of senders, sender reputations, and wanted email groups each of the recipients in its database.
 %
-If such datas of the sender match datas in a database and the high reputation score sender, email is moved to the inbox categories of wanted recipients.
+If such data of the sender match the data in a database and the high reputation score sender, email is moved to the inbox categories of wanted recipients.
+%
 Otherwise, email is moved to the spam inbox.
-% match the destination email server connect to MNSRS to update the list and marketing or newsletter email group wanted of recipients.
-%If not match the destination email server enter this email into spam category.
+%
 A database of recipients is updated by MNSRS that both sides can define the schedule for automatic updating.
-
-%3) The Destination Email Server connect to MNSRS to update the list of Marketing or Newsletter Mail Server and details of recipients under the destination domain only.
-%4) The Destination Mail Server enter the email into the inbox categories of wanted recipients as Marketing, Newsletter or Spam in their domain.
 
 \begin{figure}
 \centering
@@ -649,17 +656,18 @@ A database of recipients is updated by MNSRS that both sides can define the sche
 \label{fig:SendingMethod}
 \end{figure}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The False Reporting Method}
-The false reporting method is
-shown in Fig. \ref{fig:FaultReportingMethod} and described as follows:
-%1) Marketing or Newsletter Email Server send the marketing or newsletter emails to the recipients registered through the Destination Email Server of recipients.
-%2) Destination Email Server enters the email to mail box categories of the recipients using the wanted data of recipients from the MNSRS.
-1) When the recipients receive the unwanted marketing or newsletter emails and these emails are not in the spam inbox, the recipients can move these emails to spam inbox to report back to the senders.
-2) Then the destination email servers of recipients reported connect to the MNSRS to unsubscribe the marketing or newsletter email servers wanted.
-%
-Besides that, the MNSRS calculates new reputation score each of the senders canceled by using the statistics reports.
-%to prepare the sender Reputation of Marketing or Newsletter Email Server from such the statistics reported.
-3) The MNSRS send the lists of unwanted recipients to the marketing or newsletter email servers that send email to unwanted recipients for updating recipient database. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The false reporting method is shown in Fig. \ref{fig:FaultReportingMethod} and described as follows:
+\begin{enumerate}
+  \item When the recipients receive the unwanted marketing or newsletter emails and these emails are not in the spam inbox, the recipients can move these emails to spam inbox to report back to the senders.
+  \item Then the destination email servers of recipients reported connect to the MNSRS to unsubscribe the marketing or wanted newsletter email servers.
+  %
+  Besides that, the MNSRS calculates new reputation score each of the senders canceled by using the statistics reports.
+  \item The MNSRS sends the lists of unwanted recipients to the marketing or newsletter email servers that send email to unwanted recipients for updating recipient database. 
+\end{enumerate}
 
 \begin{figure}
 \centering
@@ -668,22 +676,22 @@ Besides that, the MNSRS calculates new reputation score each of the senders canc
 \label{fig:FaultReportingMethod}
 \end{figure}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The Sender Reputation Method}
-The sender reputation method by using MNSRS is
-shown in Fig. \ref{fig:ReputationMethod} and described as follows:
-1) While the recipients move the unwanted marketing or newsletter emails to spam inbox, the destination email servers of recipients reported will receive the these false reports
-%2) Then the recipients report to Destination Email Server that they receive the list of unwanted emails.
-2) Such the destination email server connect to the MNSRS to unsubscribe the marketing or newsletter email servers wanted.
-The MNSRS updates own recipient database and calculates new reputation score each of the senders canceled based on the centralized recipient feedback by using this formula:
-% to prepare the sender Reputation of Marketing or Newsletter Email Server from such the statistics reported.
-%The sender reputation can be calculated by using this formula:\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The sender reputation method by using MNSRS is shown in Fig. \ref{fig:ReputationMethod} and described as follows:
+\begin{enumerate}
+  \item While the recipients move the unwanted marketing or newsletter emails to spam inbox, the destination email servers of recipients reports will receive the these false reports
+  \item Such the destination email server connect to the MNSRS to unsubscribe the marketing or wanted newsletter email servers.
+  %
+The MNSRS updates its own recipient database and calculates new reputation score each of the senders canceled based on the centralized recipient feedback by using this formula:
 
 $$ \text{reputation} =  \frac{ 100\times{\text{(asm - aur)}}}{\text{asm}} $$
 where\mbox{ }\\
-%asm = all of the sending marketing emails.\mbox{ }\\
 asm = Total of the sending marketing or newsletter emails each of the senders.\\
 aur = Total of spam  marketing or newsletter emails that reported by the unwanted recipients.
-
+\end{enumerate}
 
 \begin{figure}
 \centering
@@ -692,12 +700,15 @@ aur = Total of spam  marketing or newsletter emails that reported by the unwante
 \label{fig:ReputationMethod}
 \end{figure}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The Sender and Recipient Authentication Method}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 In the sending and receiving marketing or newsletter emails process between the marketing or newsletter email servers and the destination email servers, SPF \cite{wong,NguyenTuanAnh,Seike} is used to confirmed both good email systems.
-%The Marketing or Newsletter Email Server and the Destination Email Server update the list of the recipients received the wanted marketing or newsletter email.
-%Then they send these email to the recipients to meet the demand.
+%
 The conditions for sending and receiving email are as follows:
 The registered email systems of the senders and the recipients must support SPF method to send and receive emails.
+%
 The process diagram is shown in Fig. \ref{fig:AuthenticationMethod}.
 
 \begin{figure}
@@ -707,15 +718,22 @@ The process diagram is shown in Fig. \ref{fig:AuthenticationMethod}.
 \label{fig:AuthenticationMethod}
 \end{figure}
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Experimental Results}
-According to the author has designed and tested the FMNSRS system that can classify the marketing or newsletter email group matching the real needs of the recipients better than the traditional email system.
-It works well especially when the emails with the
-contents in the local language is not in English.
-In addition to that, all processes of the FMNSRS system are run automation.
-The administrators do not need to modify the database itself. 
-The users of FMNSRS system also feel no difference from using the general email systems. 
-Moreover, this paper is also able to identify the senders as either quality or not quality.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+We designed and tested the FMNSRS system that can classify the marketing or newsletter email group matching the real needs of the recipients better than the traditional email system.
+%
+It works well especially when the emails with the contents in the local language is not in English.
+%
+In addition to that, all processes of the FMNSRS system are automatically run.
+%
+The administrators do not need to modify the database themselves. 
+%
+The users of FMNSRS system also feel no difference from using the general email systems.
+% 
+Moreover, this paper can identify the senders as either quality or not quality.
+%
 The experimental samples for this research are shown in Table \ref{table_inputData} and Table \ref{table_emailDataset_checkRecord} shows the email data set and checking record.
 
 \begin{table}[!t]
@@ -776,7 +794,10 @@ content (keyword) & content filter (keyword)\\
 
 To analyze system performance for this paper, there are two methods for analysis described in the following subsections.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{True positive (TP)}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 This method is used to analyze the accuracy of the detection email which can be calculated by using this formula:\\
 $$ \text{NEAR} =  \frac{\text{NofNEDetectedNE}}{\text{NofNEDetectedNE + NofNEDetectedFault}} \times 100 $$\\
 $$ \text{MEAR} =  \frac{\text{NofMEDetectedME}}{\text{NofMEDetectedME + NofMEDetectedFault}} \times 100 $$\\
@@ -814,13 +835,14 @@ NofSEDetectedFault & The number of the spam email detected fault.\\
 \end{table}
 
 Table \ref{table_variableTP} summarizes the notation for The TP Analysis.
-Fig. \ref{fig:resultTP} and Table \ref{table_resultsTP} show the results of the TP
-analysis.
-As a
-results, this novel process can detect the normal emails accurately 81.90\% and 45.26\% more than the traditional process.
+%
+Fig. \ref{fig:resultTP} and Table \ref{table_resultsTP} show the results of the TP analysis.
+%
+As a results, this novel process can detect the normal emails accurately 81.90\% and 45.26\% more than the traditional process.
+%
 Furthermore, the novel process can detect the marketing or newsletter email accurately 73.30\% and the spam email accurately 62.44\%.
-These results are an acceptable accurate
-rate.
+%
+These results are an acceptable accurate rate.
 
 \begin{figure}
 \centering
@@ -905,15 +927,27 @@ The spam email & 67.06\% & 37.56\%\\
 \end{tabular}
 \end{table}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion and Future Directions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 The testing results from the previous section show that this technique can improve the detection capability of the email detection process.
+%
 The novel system can classify the type of email, marketing or newsletter, matching the real needs of the recipient better than the traditional system.
+%
 In addition, it can help facilitate email management for administrators.
-However, there is also disadvantages as follows. 
-1) If the amount of the registration or the statistic are not enough,  this system can detect the emails accuracy decreases.
-2) This technique is necessary to use the request and response data exchange several times.
-In the future work, we intend to improve the exchange process less complicated.
-In addition to that, we intend to improve the detection accuracy although there is not enough information.
+%
+However, there are also disadvantages as follows.
+%
+\begin{enumerate}
+   \item If the amount of the registration or the relevant statistics are not enough, the accuracy of email detection system decreases. 
+
+   \item This technique utilizes the data exchange requests and responses  several times.
+ \end{enumerate} 
+%
+In the future work, we intend to improve the exchange process to make it less complicated.
+%
+In addition to that, we intend to improve the detection accuracy without sufficient information.
 
 
 
